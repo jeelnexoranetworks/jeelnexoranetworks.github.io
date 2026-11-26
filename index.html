@@ -1,0 +1,1033 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexora Networks | Apps, Games & Technology</title>
+
+    <meta name="description" content="Nexora Networks, founded by Jeelkumar Patel, develops innovative mobile applications, games and digital experiences. Discover Bachat, your personal finance management app.">
+
+    <meta name="author" content="JEELKUMAR PATEL">
+    <meta name="theme-color" content="#080d20">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #080d20;
+            --card: #111a32;
+            --primary: #38bdf8;
+            --purple: #a855f7;
+            --white: #ffffff;
+            --muted: #a4b0c5;
+            --border: #26334d;
+            --gold: #facc15;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            background: rgba(8, 13, 32, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand {
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .brand span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 7%;
+            background:
+                radial-gradient(
+                    ellipse at 20% 30%,
+                    #123367 0%,
+                    transparent 45%
+                ),
+                radial-gradient(
+                    ellipse at 80% 70%,
+                    #30134f 0%,
+                    transparent 45%
+                );
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: appear 1s ease;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 8px 18px;
+            border: 1px solid #38bdf855;
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 7vw, 82px);
+            line-height: 1.12;
+            margin-bottom: 25px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg, #38bdf8, #818cf8, #c084fc
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 18px;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 28px;
+            border-radius: 12px;
+            font-weight: bold;
+            background: linear-gradient(
+                135deg, #0284c7, #7c3aed
+            );
+            color: white;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px #38bdf833;
+        }
+
+        section {
+            padding: 85px 7%;
+            scroll-margin-top: 85px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(30px, 5vw, 44px);
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        .app-card {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 45px;
+            padding: 40px;
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            background: linear-gradient(
+                145deg, #111e39, #10162b
+            );
+        }
+
+        .app-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 23px;
+            background: #0c315e;
+            border: 1px solid #38bdf866;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 52px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .app-icon span {
+            font-size: 30px;
+            color: var(--gold);
+        }
+
+        .app-info h2 {
+            font-size: 42px;
+        }
+
+        .tagline {
+            color: var(--gold);
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .app-info p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .available {
+            display: inline-block;
+            color: #4ade80;
+            background: #22c55e15;
+            border-radius: 30px;
+            padding: 5px 14px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .phone {
+            max-width: 290px;
+            margin: auto;
+            background: #070b16;
+            border: 5px solid #34435d;
+            border-radius: 35px;
+            padding: 12px;
+            box-shadow: 0 25px 70px #0007;
+        }
+
+        .phone-screen {
+            background: #f4f7fc;
+            border-radius: 24px;
+            color: #16243a;
+            padding: 20px 15px;
+        }
+
+        .phone-header {
+            background: #12366b;
+            color: white;
+            border-radius: 15px;
+            padding: 18px;
+            margin-bottom: 15px;
+        }
+
+        .phone-header small {
+            color: #c4d9ff;
+        }
+
+        .balance-card {
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 3px 12px #00000009;
+        }
+
+        .balance-card small {
+            color: #64748b;
+        }
+
+        .income {
+            color: #16a34a;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .expense {
+            color: #dc2626;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .wallet-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .wallet {
+            background: #e6edff;
+            padding: 12px 6px;
+            border-radius: 10px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .wallet strong {
+            display: block;
+            font-size: 17px;
+            margin-top: 5px;
+        }
+
+        .demo-label {
+            text-align: center;
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 15px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit, minmax(240px, 1fr)
+            );
+            gap: 22px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .feature {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 14px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .feature p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .upcoming {
+            background: #0b1328;
+        }
+
+        .upcoming-card {
+            text-align: center;
+            padding: 40px 25px;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            color: #c084fc;
+            background: #a855f720;
+            border-radius: 30px;
+            padding: 6px 15px;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: var(--muted);
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .founder-card {
+            max-width: 550px;
+            margin: 35px auto;
+            padding: 40px 25px;
+            background: linear-gradient(
+                145deg, #111e39, #10162b
+            );
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px #0003;
+        }
+
+        .founder-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(
+                135deg, #0284c7, #7c3aed
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            font-weight: bold;
+            margin: 0 auto 22px;
+            border: 3px solid #ffffff25;
+        }
+
+        .founder-card h2 {
+            font-size: clamp(22px, 4vw, 30px);
+            letter-spacing: 1px;
+        }
+
+        .founder-role {
+            color: var(--primary);
+            font-size: 17px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .founder-company {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .founder-card p {
+            font-size: 15px;
+        }
+
+        .contact-card {
+            max-width: 750px;
+            margin: auto;
+            padding: 40px 25px;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background: var(--card);
+        }
+
+        .contact-card p {
+            color: var(--muted);
+            margin: 15px 0 25px;
+        }
+
+        footer {
+            background: #050917;
+            padding: 45px 7%;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .developer-credit {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .developer-credit strong {
+            color: var(--primary);
+            display: block;
+            font-size: 16px;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px 5%;
+            }
+
+            .nav-links {
+                gap: 16px;
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 75vh;
+                padding: 65px 5%;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 5%;
+                scroll-margin-top: 120px;
+            }
+
+            .app-card {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+
+            .app-info {
+                text-align: center;
+            }
+
+            .app-icon {
+                margin: 0 auto 20px;
+            }
+
+            .phone {
+                width: 100%;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(
+                    auto-fit, minmax(220px, 1fr)
+                );
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+        <a class="brand" href="#home">
+            Nexora <span>Networks</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#apps">Apps</a>
+            <a href="#upcoming">Games</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <header class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="label">
+                APPS • GAMES • TECHNOLOGY
+            </div>
+
+            <h1>
+                Building Apps.<br>
+                <span class="gradient-text">
+                    Creating Experiences.
+                </span>
+            </h1>
+
+            <p>
+                Discover innovative mobile applications,
+                engaging games and digital experiences
+                designed to make everyday life better.
+            </p>
+
+            <a href="#apps" class="btn">
+                Explore Our Apps →
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- Applications Section -->
+
+    <section id="apps">
+
+        <div class="section-heading">
+            <h2>Our Applications</h2>
+            <p>Technology designed for everyday life.</p>
+        </div>
+
+        <div class="app-card">
+
+            <div class="app-info">
+
+                <div class="app-icon">
+                    B<span>₹</span>
+                </div>
+
+                <div class="available">
+                    ● Available on Google Play
+                </div>
+
+                <h2>Bachat</h2>
+
+                <div class="tagline">
+                    Every Rupee Matters.
+                </div>
+
+                <p>
+                    Take control of your personal finances
+                    with Bachat. Track your income,
+                    manage daily expenses, monitor savings
+                    and understand your spending habits
+                    through a simple and intuitive dashboard.
+                </p>
+
+                <a
+                    class="btn"
+                    href="https://play.google.com/store/apps/details?id=com.bachat.myapp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    ▶ Download on Google Play
+                </a>
+
+            </div>
+
+            <!-- Illustrative App Dashboard -->
+
+            <div>
+
+                <div class="phone">
+
+                    <div class="phone-screen">
+
+                        <div class="phone-header">
+                            <h2>Bachat</h2>
+                            <small>Every Rupee Matters.</small>
+                        </div>
+
+                        <div class="balance-card">
+                            <small>Total Income</small>
+                            <div class="income">
+                                ₹50,000
+                            </div>
+                        </div>
+
+                        <div class="balance-card">
+                            <small>Total Expenses</small>
+                            <div class="expense">
+                                ₹32,750
+                            </div>
+                        </div>
+
+                        <div class="wallet-grid">
+
+                            <div class="wallet">
+                                Spending Wallet
+                                <strong>₹7,250</strong>
+                            </div>
+
+                            <div class="wallet">
+                                Savings Wallet
+                                <strong>₹10,000</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="demo-label">
+                    Illustrative dashboard preview
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Bachat Features -->
+
+    <section id="features">
+
+        <div class="section-heading">
+            <h2>Manage Money Smarter</h2>
+            <p>Discover the powerful features of Bachat.</p>
+        </div>
+
+        <div class="features-grid">
+
+            <article class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Income Management</h3>
+                <p>
+                    Record and monitor your income
+                    in one convenient place.
+                </p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">💳</div>
+                <h3>Expense Tracking</h3>
+                <p>
+                    Track daily expenses and understand
+                    where your money goes.
+                </p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">👛</div>
+                <h3>Smart Wallets</h3>
+                <p>
+                    Manage your spending and savings
+                    using separate wallets.
+                </p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Financial Insights</h3>
+                <p>
+                    Understand your financial habits
+                    through reports and insights.
+                </p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">📄</div>
+                <h3>PDF Reports</h3>
+                <p>
+                    Download financial reports in PDF
+                    format for convenient record keeping.
+                </p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">🌐</div>
+                <h3>Multiple Languages</h3>
+                <p>
+                    Manage your finances using
+                    your preferred supported language.
+                </p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">📋</div>
+                <h3>Transaction History</h3>
+                <p>
+                    View your recorded income
+                    and expense transactions.
+                </p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">📈</div>
+                <h3>Category-wise Tracking</h3>
+                <p>
+                    Organize your expenses into categories
+                    and understand your spending patterns.
+                </p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Easy-to-use Dashboard</h3>
+                <p>
+                    Access important financial information
+                    through a simple and intuitive interface.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- Upcoming Apps and Games -->
+
+    <section class="upcoming" id="upcoming">
+
+        <div class="section-heading">
+            <h2>What's Next?</h2>
+            <p>More digital experiences are planned.</p>
+        </div>
+
+        <div class="features-grid">
+
+            <article class="feature upcoming-card">
+
+                <div class="feature-icon">🎮</div>
+
+                <h3>Mobile Games</h3>
+
+                <p>
+                    Engaging and entertaining
+                    mobile gaming experiences.
+                </p>
+
+                <span class="coming-soon">
+                    Coming Soon
+                </span>
+
+            </article>
+
+            <article class="feature upcoming-card">
+
+                <div class="feature-icon">🚀</div>
+
+                <h3>New Applications</h3>
+
+                <p>
+                    Innovative applications designed
+                    to simplify everyday tasks.
+                </p>
+
+                <span class="coming-soon">
+                    Coming Soon
+                </span>
+
+            </article>
+
+            <article class="feature upcoming-card">
+
+                <div class="feature-icon">💻</div>
+
+                <h3>Digital Solutions</h3>
+
+                <p>
+                    Exploring new technologies
+                    and digital possibilities.
+                </p>
+
+                <span class="coming-soon">
+                    Future Projects
+                </span>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- About Section -->
+
+    <section id="about">
+
+        <div class="section-heading">
+
+            <h2>About Nexora Networks</h2>
+
+            <p>Ideas. Innovation. Impact.</p>
+
+        </div>
+
+        <div class="about">
+
+            <p>
+                Nexora Networks is an independent developer
+                brand founded by Jeelkumar Patel, focused on
+                creating innovative mobile applications,
+                games and meaningful digital experiences.
+            </p>
+
+            <p>
+                Our mission is to combine technology,
+                creativity and simplicity to build useful
+                products that provide meaningful value
+                to people in their everyday lives.
+            </p>
+
+            <!-- Founder Profile -->
+
+            <div class="founder-card">
+
+                <div class="founder-avatar">
+                    JP
+                </div>
+
+                <h2>JEELKUMAR PATEL</h2>
+
+                <div class="founder-role">
+                    Founder &amp; Developer
+                </div>
+
+                <div class="founder-company">
+                    Nexora Networks
+                </div>
+
+                <p>
+                    Passionate about technology,
+                    cloud computing, mobile application
+                    development and creating meaningful
+                    digital experiences.
+                </p>
+
+                <p>
+                    Focused on building innovative,
+                    user-friendly applications and games
+                    that make technology more accessible
+                    and useful.
+                </p>
+
+            </div>
+
+            <a href="#apps" class="btn">
+                Explore Our Applications →
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Contact and Support -->
+
+    <section id="contact">
+
+        <div class="section-heading">
+
+            <h2>Contact &amp; Support</h2>
+
+            <p>We value your feedback.</p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <div class="feature-icon">✉️</div>
+
+            <h2>Get in Touch</h2>
+
+            <p>
+                For application support, suggestions,
+                feedback and privacy policy information,
+                please visit our application's official
+                Google Play listing and open the
+                App Support section.
+            </p>
+
+            <a
+                class="btn"
+                href="https://play.google.com/store/apps/details?id=com.bachat.myapp"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Google Play &amp; App Support
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="brand">
+            Nexora <span>Networks</span>
+        </div>
+
+        <p>
+            Building Apps. Creating Experiences.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#apps">Applications</a>
+
+            <a href="#features">Features</a>
+
+            <a href="#upcoming">Games</a>
+
+            <a href="#about">About Us</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+        <div class="developer-credit">
+
+            <p>Designed &amp; Developed by</p>
+
+            <strong>JEELKUMAR PATEL</strong>
+
+            <p>Founder &amp; Developer — Nexora Networks</p>
+
+        </div>
+
+        <p>
+            © <span id="year">2026</span>
+            Nexora Networks. All rights reserved.
+        </p>
+
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
